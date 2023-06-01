@@ -7,7 +7,7 @@ function AddItems() {
   const [todos, setTodos] = useState([]);
   function addTodo() {
     if (todo !== " ") {
-      setTodos(...todos, todo);
+      setTodos([...todos, todo]);
       setTodo("");
     }
   }
@@ -20,6 +20,24 @@ function AddItems() {
         onChange={(e) => setTodo(e.target.value)}
       />
       <input type="button" value="add" onClick={addTodo} />
+
+      <div>
+      {todos.length > 0 ? (
+        <ul className="todo-list">
+          {todos.map((todo, index) => (
+            <div className="todo">
+              <li key={index}> {todo} </li>
+
+              <button className="delete-button">Delete</button>
+            </div>
+          ))}
+        </ul>
+      ) : (
+        <div className="empty">
+          <p>No task found</p>
+        </div>
+      )}
+      </div>
     </div>
   );
 }
