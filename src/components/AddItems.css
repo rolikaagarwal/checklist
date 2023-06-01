@@ -7,5 +7,18 @@ input{
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: auto;
+}
+
+
+.display-list{
+    display: flex;
+    /* background-color: bisque; */
+    text-align: center;
+    width: 30%;
+    margin: 3px auto;
+    align-items: center;
+    justify-content: center;
+    color: rgb(10, 9, 9);
+
 }
